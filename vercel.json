@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.js"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "https://gleeful-stardust-4a8194.netlify.app" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,POST,PUT,DELETE,OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "X-Requested-With,Content-Type,Accept,Authorization" },
+        { "key": "Access-Control-Allow-Credentials", "value": "true" }
+      ]
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "MYSQL_ADDON_HOST": "bc1356rqm8fuvahhugjo-mysql.services.clever-cloud.com",
+    "MYSQL_ADDON_DB": "bc1356rqm8fuvahhugjo",
+    "MYSQL_ADDON_USER": "uwyrg5s6txiistsa",
+    "MYSQL_ADDON_PORT": "3306",
+    "MYSQL_ADDON_PASSWORD": "RRH6fCmDja2D0NWKbMI1",
+    "FRONTEND_URL": "https://gleeful-stardust-4a8194.netlify.app"
+  }
+}
